@@ -9,12 +9,12 @@ export default function Stats() {
       <div className="grid grid-cols-3 gap-8">
 
         <div>
-          <Counter target={1200+} />
+          <Counter target={1200} />
           <p>Papers Published</p>
         </div>
 
         <div>
-          <Counter target={300+} />
+          <Counter target={300} />
           <p>Researchers Supported</p>
         </div>
 
