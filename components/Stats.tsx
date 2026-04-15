@@ -1,30 +1,30 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import Counter from "./Counter";
 
-function Counter({ target }: { target: number }) {
-  const [count, setCount] = useState(0);
-  const ref = useRef<HTMLDivElement>(null!);
+export default function Stats() {
+  return (
+    <section className="py-20 text-center">
 
-  useEffect(() => {
-    let start = 0;
-    const duration = 1000;
-    const increment = target / (duration / 16);
+      <div className="grid grid-cols-3 gap-8">
 
-    const timer = setInterval(() => {
-      start += increment;
-      if (start >= target) {
-        setCount(target);
-        clearInterval(timer);
-      } else {
-        setCount(Math.floor(start));
-      }
-    }, 16);
+        <div>
+          <Counter target={1200+} />
+          <p>Papers Published</p>
+        </div>
 
-    return () => clearInterval(timer);
-  }, [target]);
+        <div>
+          <Counter target={300+} />
+          <p>Researchers Supported</p>
+        </div>
 
-  return <div ref={ref}>{count}+</div>;
+        <div>
+          <Counter target={50} />
+          <p>Countries Reached</p>
+        </div>
+
+      </div>
+
+    </section>
+  );
 }
-
-export default Counter;
