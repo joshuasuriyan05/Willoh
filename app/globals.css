@@ -1,0 +1,241 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================= */
+/* GLOBAL SETTINGS */
+/* ============================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #ffffff;
+  color: #111827;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Responsive section spacing */
+
+section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+@media (min-width: 768px) {
+  section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+
+/* Prevent image overflow */
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Touch optimization */
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ============================= */
+/* NAVBAR */
+/* ============================= */
+
+.nav-shadow {
+  box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+  backdrop-filter: blur(10px);
+}
+
+/* ============================= */
+/* HERO */
+/* ============================= */
+
+.hero-gradient {
+  background: linear-gradient(135deg, #0b1c3d, #1d4ed8);
+}
+
+/* ============================= */
+/* AI PARTICLES BACKGROUND */
+/* ============================= */
+
+.particles-bg {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.8) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: particlesMove 25s linear infinite;
+  opacity: 0.25;
+}
+
+@keyframes particlesMove {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-200px);
+  }
+}
+
+/* ============================= */
+/* PREMIUM LOGO CAROUSEL */
+/* ============================= */
+
+.logo-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gradient fade edges */
+
+.logo-wrapper::before,
+.logo-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.logo-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, white, transparent);
+}
+
+.logo-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, white, transparent);
+}
+
+/* Row container */
+
+.logo-row {
+  display: flex;
+  gap: 50px;
+  width: max-content;
+  will-change: transform;
+}
+
+/* Scroll animations */
+
+@keyframes scroll-left {
+  from {
+    transform: translate3d(0,0,0);
+  }
+  to {
+    transform: translate3d(-50%,0,0);
+  }
+}
+
+@keyframes scroll-right {
+  from {
+    transform: translate3d(-50%,0,0);
+  }
+  to {
+    transform: translate3d(0,0,0);
+  }
+}
+
+.scroll-left {
+  animation: scroll-left 28s linear infinite;
+}
+
+.scroll-right {
+  animation: scroll-right 28s linear infinite;
+}
+
+/* Pause animation on hover */
+
+.logo-wrapper:hover .logo-row {
+  animation-play-state: paused;
+}
+
+/* Logo styling */
+
+.logo-row img {
+  height: 45px;
+  opacity: 0.7;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+/* Desktop logo size */
+
+@media (min-width: 768px) {
+  .logo-row img {
+    height: 60px;
+  }
+}
+
+/* Hover effect */
+
+.logo-row img:hover {
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+/* ============================= */
+/* FLOATING LOGO ANIMATION */
+/* ============================= */
+
+@keyframes float {
+
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+
+}
+
+.float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* ============================= */
+/* GLOW BUTTON */
+/* ============================= */
+
+.glow-btn {
+  padding: 12px 28px;
+  border-radius: 8px;
+  background: linear-gradient(135deg,#2563eb,#7c3aed);
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 0 20px rgba(99,102,241,0.6);
+  transition: all 0.3s ease;
+}
+
+.glow-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 35px rgba(99,102,241,0.9);
+}
+
+/* ============================= */
+/* WORKFLOW CARDS */
+/* ============================= */
+
+.workflow-card {
+  padding: 20px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease;
+}
+
+.workflow-card:hover {
+  transform: translateY(-6px);
+}
