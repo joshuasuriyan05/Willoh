@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero";
+import Counter from "@/components/Counter";
 import Stats from "@/components/Stats";
 import AuthorTestimonials from "@/components/AuthorTestimonials";
 import EditorialBoard from "@/components/EditoralBoard";
@@ -14,6 +15,8 @@ export default function Home() {
 
 
       <Stats />
+
+      <Counter target={1200} />
 
       <AuthorTestimonials />
 
